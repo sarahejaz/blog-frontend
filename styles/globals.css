@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+.jost {
+  font-family: 'Fira Sans', sans-serif;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Fira Sans', sans-serif;
+  min-height: 100vh;
+  background: #c5ddeb;
+  background: linear-gradient(0deg, #c5ddeb 0%, #e3f6ff 100%);
 }
 
 a {

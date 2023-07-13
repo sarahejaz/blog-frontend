@@ -9,12 +9,30 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@material-ui/core": "^4.12.4",
+    "@mui/icons-material": "^5.10.3",
+    "@mui/material": "^5.10.3",
+    "axios": "^0.27.2",
+    "fs": "^0.0.1-security",
+    "html-react-parser": "^3.0.4",
+    "html-to-text": "^8.2.1",
+    "js-cookie": "^3.0.1",
+    "mongoose": "^6.5.5",
+    "multer": "^1.4.5-lts.1",
     "next": "12.2.5",
+    "next-connect": "^0.13.0",
+    "notistack": "^2.0.5",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.34.2",
+    "suneditor": "^2.43.14",
+    "suneditor-react": "^3.4.1"
   },
   "devDependencies": {
     "eslint": "8.23.0",
-    "eslint-config-next": "12.2.5"
+    "eslint-config-next": "12.2.5",
+    "sass": "^1.54.8"
   }
 }

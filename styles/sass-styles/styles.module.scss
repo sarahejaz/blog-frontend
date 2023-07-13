@@ -1,0 +1,973 @@
+@import './variables';
+
+// ==================================================== COMMON ====================================================
+.font {
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.myButtons {
+  font-family: 'Fira Sans', sans-serif;
+  letter-spacing: 2px;
+}
+
+.mainHeading1 {
+  font-size: 30px;
+  font-weight: bolder;
+  color: $dark-font;
+}
+
+.mainHeading2 {
+  font-size: 18px;
+  color: darken($secondary-color, 8%);
+}
+
+.grow {
+  @include flexGrow();
+}
+
+.centeredFlex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.errorMessage {
+  font-size: 14px;
+  color: #c61515;
+  font-weight: 500;
+}
+
+.mainButton {
+  @extend .myButtons;
+  color: $light-font;
+  background-color: $third-color;
+  margin-top: $add-post-form-margin;
+  font-size: 18px;
+
+  &:hover {
+    background-color: darken($third-color, 6%);
+  }
+}
+
+.loggedInUser {
+  @extend .font;
+  @extend .mainHeading2;
+  text-decoration: none;
+  text-transform: none;
+
+  &:active {
+    color: darken($secondary-color, 14%);
+  }
+
+  letter-spacing: 0;
+  font-weight: 400;
+  background-color: lighten($secondary-color, 12%);
+  color: $lighter-font;
+  padding: 8px 14px 8px 14px;
+  border-radius: 12px;
+
+  &:hover {
+    background-color: lighten($secondary-color, 5%);
+  }
+}
+
+.profilePhotoWithInitial {
+  @extend .centeredFlex;
+  @extend .font;
+  width: 80px;
+  height: 80px;
+  font-size: 46px;
+  padding: 2px;
+  border-radius: 50%;
+  background-color: $secondary-color;
+  color: $lighter-font;
+}
+
+.createButton {
+  @extend .font;
+  background-color: $primary-color-light;
+  color: $lighter-font;
+  font-size: 20px;
+  padding: 8px 15px 8px 15px;
+
+  &:hover {
+    background-color: $primary-color-lighter;
+  }
+}
+
+// ==================================================== AUTHOR HEADING ====================================================
+.authorHeading {
+  margin: 0;
+  margin-top: 10px;
+  font-size: 16px;
+  color: $primary-color-light;
+  font-style: italic;
+}
+
+// ==================================================== READ MORE BUTTON ====================================================
+.readMoreButton {
+  border: 3px solid $third-color;
+  padding: 8px 10px 8px 10px;
+  color: $third-color;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+// ==================================================== TAG DISPLAY CHIP ====================================================
+.tagDisplayChip {
+  @extend .font;
+  font-size: 16px;
+  padding: 5px;
+  margin-top: 4px;
+  background-color: $primary-color-light;
+  color: $lighter-font;
+  border-radius: 7px;
+  margin-right: 3px;
+}
+
+.tagChip {
+  @extend .tagDisplayChip;
+}
+
+.tagsDropdownMenu {
+  @extend .font;
+}
+
+// ==================================================== FLOATING BUTTON ====================================================
+.fab {
+  @extend .font;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: $primary-color-light;
+  margin: 0px;
+  top: auto;
+  right: 20px;
+  bottom: 20px;
+  left: auto;
+  position: fixed;
+
+  &:hover {
+    background-color: $primary-color-lighter;
+  }
+}
+
+// ==================================================== NAV BAR ====================================================
+.navbar {
+  background: transparent;
+  padding: 20px;
+  width: 100%;
+  position: relative;
+
+  .navMainHeading1 {
+    @extend .mainHeading1;
+    text-decoration: none;
+    text-transform: none;
+  }
+
+  .navHeading1 {
+    @extend .mainHeading2;
+    text-decoration: none;
+    text-transform: none;
+
+    &:active {
+      color: $third-color;
+    }
+  }
+
+  .navHeading1LoggedInUser {
+    @extend .loggedInUser;
+  }
+}
+
+.navbarRightItems {
+}
+
+.hamburger {
+  // removes default border on button element
+  border: 0;
+  min-width: 50px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: lighten($secondary-color, 12%);
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  // positions the icon to the right and center aligns it vertically
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  transform: translateY(-50%);
+  display: none;
+
+  &:hover {
+    background-color: lighten($secondary-color, 1%);
+  }
+}
+
+// ==================================================== NAME MENU ====================================================
+.nameMenu {
+  @extend .font;
+  margin: 0;
+}
+
+.menuMobile {
+  @extend .nameMenu;
+  padding: 80px;
+
+  .menuItemMobileText {
+    @extend .font;
+    margin: 0;
+    font-size: 18px;
+    text-decoration: none;
+    color: $primary-color-light;
+    font-weight: 400;
+  }
+
+  .loggedInUserMobile {
+    @extend .font;
+    @extend .mainHeading2;
+    text-decoration: none;
+    text-transform: none;
+
+    &:active {
+      color: $third-color;
+    }
+
+    letter-spacing: 0;
+    font-weight: 400;
+    background-color: lighten($secondary-color, 15%);
+    color: $lighter-font;
+    padding: 8px 14px 8px 14px;
+    border-radius: 14px;
+    margin: 10px 14px 10px 14px;
+
+    &:active {
+      color: darken($secondary-color, 15%);
+    }
+  }
+}
+
+.menuItemMobile {
+  padding: 10px 60px 10px 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .navbarRightItems {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .menuMobile {
+    display: none;
+  }
+}
+
+// ==================================================== FOOTER ====================================================
+.footer {
+  margin-top: 40px;
+  hr {
+    width: 85%;
+    margin: 0 auto;
+    height: 1px;
+    background: $primary-color-lighter;
+    border: none;
+    border-radius: 3px;
+  }
+
+  .footerText {
+    color: $primary-color-lighter;
+  }
+}
+
+// ==================================================== HOME ====================================================
+.home {
+  margin: 14px;
+}
+
+// ==================================================== EXPLORE ====================================================
+.explore {
+  @extend .home;
+
+  .exploreTitle {
+    @extend .mainHeading1;
+    font-size: 40px;
+  }
+
+  .searchTextField {
+    @extend .textField;
+    min-width: 100px;
+  }
+
+  .searchButton {
+    @extend .mainButton;
+    margin: 0;
+    height: 50px;
+    width: 90%;
+    min-width: 22%;
+    padding: 26px;
+  }
+
+  .applyButton {
+    @extend .searchButton;
+    width: 36%;
+    margin: 3%;
+  }
+
+  .resetButton {
+    @extend .applyButton;
+    color: $third-color;
+    background-color: darken($light-font, 5%);
+
+    &:hover {
+      background-color: darken($light-font, 10%);
+    }
+
+    margin: 3%;
+    min-width: 22%;
+    padding: 26px;
+  }
+
+  .noBlogsFound {
+    width: 100%;
+    padding: 0 3% 0 3%;
+
+    p {
+      font-weight: 500;
+      font-size: 20px;
+      color: darken($third-color, 4%);
+    }
+  }
+
+  .sortByButton {
+    @extend .myButtons;
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: normal;
+    color: $primary-color;
+    text-transform: capitalize;
+  }
+}
+
+// ==================================================== REFINE SEARCH ====================================================
+.refineSearch {
+  @extend .home;
+
+  background-color: darken($lighter-font, 2%);
+  border-radius: 5px;
+  padding: 8px 30px 8px 30px;
+  min-width: 350px;
+  margin-right: 40px;
+
+  h3 {
+    margin-bottom: 8px;
+  }
+
+  p {
+    margin: 0;
+    font-size: 18px;
+  }
+}
+
+// ==================================================== BLOG POST PAGE ====================================================
+.blogPostPageMain {
+  @extend .home;
+  text-align: center;
+  margin-top: 90px;
+
+  .blogPostTitleHeading {
+    margin-bottom: 0;
+    font-size: 60px;
+    font-weight: 900;
+    color: $dark-font;
+  }
+
+  .blogPostAuthorHeading {
+    margin-top: 20px;
+    font-size: 20px;
+    color: $primary-color-light;
+    font-style: italic;
+  }
+
+  .blogPostAuthorLink {
+    @extend .authorHeading;
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: underline $primary-color-light;
+  }
+
+  .blogPostTextDiv {
+    width: 900px;
+    margin: 0 auto;
+
+    p {
+      font-size: 20px;
+      text-align: left;
+      line-height: 32px;
+    }
+  }
+
+  .blogPostTags {
+    text-align: left;
+    @extend .blogPostTextDiv;
+
+    p {
+      font-size: 18px;
+      text-align: center;
+      display: inline;
+      padding: 10px 12px 10px 12px;
+      margin: 4px;
+      font-weight: 400;
+      cursor: default;
+    }
+  }
+
+  .tagDisplayChip {
+    @extend .tagDisplayChip;
+    width: 50%;
+  }
+}
+
+// ==================================================== BLOG POST NOT FOUND ====================================================
+.blogPostNotFound {
+  width: 100%;
+  margin: 0 auto;
+  font-size: 30px;
+  text-align: center;
+  font-weight: 400;
+}
+
+// ==================================================== FEATURED POST ====================================================
+.featuredPost {
+  margin-left: $featured-post-margin;
+  margin-right: $featured-post-margin;
+
+  .featuredHeading {
+    color: $primary-color-lighter;
+    letter-spacing: 2px;
+    margin-top: 0;
+  }
+
+  .featuredPostTitleHeading {
+    margin: 0;
+    font-size: 56px;
+    font-weight: 900;
+  }
+
+  .featuredPostAuthor {
+    @extend .authorHeading;
+  }
+
+  .featuredPostSelectAuthor {
+    @extend .featuredPostAuthor;
+    font-weight: 500;
+    text-decoration: underline $primary-color-light;
+  }
+
+  .featuredPostDescription {
+    font-size: 18px;
+    color: $primary-color;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  .readMore {
+    @extend .readMoreButton;
+  }
+}
+
+// ==================================================== BLOG POST CARD ====================================================
+.postCard {
+  margin-bottom: 40px;
+  width: 430px;
+
+  .postCardTitle {
+    font-weight: 900;
+    font-size: 28px;
+    color: $primary-color;
+    margin-bottom: 0;
+  }
+
+  .postCardAuthor {
+    @extend .authorHeading;
+  }
+
+  .postCardDescription {
+    font-size: 16px;
+    color: $primary-color;
+    min-height: 70px;
+    max-height: 75px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  .postCardReadMore {
+    @extend .readMoreButton;
+    font-size: 14px;
+    padding: 6px 8px 6px 8px;
+  }
+
+  .postCardViewPost {
+    @extend .postCardReadMore;
+
+    border: 3px solid darken($third-color, 4%);
+    color: darken($third-color, 4%);
+  }
+
+  .postCardEditPost {
+    @extend .postCardReadMore;
+    margin-left: 12px;
+    border: 3px solid $secondary-color;
+    color: $secondary-color;
+  }
+
+  .postCardDeletePost {
+    // background-color: lighten($third-color, 12%);
+
+    // @extend .postCardEditPost;
+    // border: 3px solid darken($third-color, 20%);
+    // background-color: lighten($third-color, 18%);
+    // color: darken($third-color, 20%);
+    color: $primary-color;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .postCardSelectAuthor {
+    @extend .postCardAuthor;
+    font-weight: 500;
+    text-decoration: underline $primary-color-light;
+  }
+
+  .postTagsDiv {
+    margin-bottom: 4px;
+
+    .postTags {
+      @extend .tagDisplayChip;
+      font-size: 12px;
+      display: inline;
+      padding: 8px;
+      margin-right: 8px;
+      text-align: center;
+    }
+  }
+}
+
+// ==================================================== ADD BLOG POST ====================================================
+.addPost {
+  @extend .home;
+  min-width: $add-post-upload-image-min-width;
+  max-width: $add-post-upload-image-max-width;
+  margin: 0 auto;
+
+  .uploadPostImage {
+    text-align: left;
+  }
+
+  .mainHeading {
+    @extend .mainHeading1;
+    font-size: 40px;
+    margin: 40px 0 10px 0;
+  }
+
+  .addPostLabels {
+    margin: 0;
+    margin-top: $add-post-form-margin;
+    font-size: 20px;
+    color: $primary-color-light;
+  }
+
+  .saveButton {
+    @extend .mainButton;
+  }
+
+  .uploadFileButton {
+    @extend .myButtons;
+    font-weight: 400;
+    color: $light-font;
+
+    background-color: $primary-color-lighter;
+    &:hover {
+      background-color: darken($primary-color-lighter, 6%);
+    }
+  }
+
+  .coverImageSizeMessage {
+    font-size: 14px;
+    color: $primary-color-light;
+  }
+
+  .contentError {
+    @extend .errorMessage;
+  }
+}
+
+// ==================================================== DELETE BLOG POST ====================================================
+.deleteBlogPostPage {
+  @extend .blogPostPageMain;
+
+  .deleteAlert {
+    font-size: 20px;
+    width: 35%;
+    min-width: 400px;
+    padding: 30px;
+    border: 3px solid $third-color;
+    color: darken($third-color, 40%);
+    font-weight: 500;
+    border-radius: 10px;
+    display: 'flex';
+    justify-content: 'center';
+    margin: 0 auto;
+    background-color: $lighter-font;
+  }
+
+  .deleteButton {
+    @extend .font;
+    letter-spacing: 1px;
+    color: $light-font;
+    background-color: $third-color;
+    margin-top: 28px;
+    padding: 8px 18px 8px 18px;
+    font-size: 18px;
+
+    &:hover {
+      background-color: darken($third-color, 4%);
+    }
+
+    width: 30%;
+  }
+
+  .goBackButton {
+    @extend .deleteButton;
+    color: $third-color;
+    background-color: darken($light-font, 5%);
+
+    &:hover {
+      background-color: darken($light-font, 10%);
+    }
+
+    margin-left: 15px;
+    width: 30%;
+  }
+}
+
+// ==================================================== SIGNUP ====================================================
+.signup {
+  @extend .home;
+  padding: 30px;
+  max-width: 550px;
+  min-width: 400px;
+  margin: 0 auto;
+
+  .signupHeading {
+    font-size: 34px;
+    margin-bottom: 19px;
+  }
+
+  .signupLabels {
+    margin: 0;
+    margin-top: $add-post-form-margin;
+    font-size: 20px;
+    color: $primary-color-light;
+  }
+
+  .saveButton {
+    @extend .mainButton;
+    margin-top: calc($add-post-form-margin + 10px);
+    width: 100%;
+  }
+
+  .textRedirect {
+    margin-top: 30px;
+    text-align: center;
+    color: $primary-color;
+  }
+
+  .link {
+    color: $third-color;
+    text-decoration: underline $third-color;
+  }
+}
+
+// ==================================================== LOGIN ====================================================
+.login {
+  @extend .signup;
+}
+
+.textField {
+  background-color: $lighter-font;
+  border-radius: 6px;
+}
+
+// ==================================================== MY PROFILE ====================================================
+.myProfileMain {
+  width: 90%;
+  margin: 0 auto;
+
+  .myProfileHeader {
+    padding: 20px;
+    padding-top: 50px;
+
+    .myProfilePhoto {
+      @extend .centeredFlex;
+      @extend .font;
+      @extend .profilePhotoWithInitial;
+    }
+
+    .myProfileName {
+      font-size: 40px;
+      margin: 0;
+      margin-top: 26px;
+    }
+
+    .myProfileEmail {
+      @extend .authorHeading;
+      margin-bottom: 50px;
+    }
+  }
+
+  .myProfilePosts {
+    .myPostsHeading {
+      font-size: 30px;
+    }
+
+    .createPost {
+      @extend .createButton;
+    }
+  }
+
+  .adminHeading {
+    color: $primary-color-lighter;
+    letter-spacing: 2px;
+    margin-top: 0;
+    font-weight: 500;
+    font-size: 20px;
+  }
+}
+
+// ==================================================== ADMIN ====================================================
+.adminDashboard {
+  padding: 20px 50px 20px 50px;
+
+  h2 {
+    font-size: 40px;
+    margin-bottom: 60px;
+  }
+
+  .adminTab {
+    @extend .font;
+    font-size: 20px;
+    padding: 20px;
+    color: $primary-color;
+
+    &:hover {
+      background-color: lighten($primary-color, 60%);
+    }
+  }
+
+  .tabContents {
+    padding-top: 30px;
+  }
+}
+
+// ==================================================== ADMIN - USER ====================================================
+.usersAdmin {
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 100%;
+
+  .usersAdminHeading {
+    font-size: 36px;
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+}
+
+.userCard {
+  @extend .postCard;
+  width: 380px;
+  margin: 14px;
+  margin-bottom: 60px;
+  background: $lighter-font;
+  border-radius: 12px;
+  padding: 20px;
+
+  .topPart {
+    margin-bottom: 20px;
+  }
+
+  .profilePhoto {
+    @extend .profilePhotoWithInitial;
+    width: 60px;
+    height: 60px;
+    font-size: 32px;
+  }
+
+  .profileFullName {
+    font-size: 28px;
+    margin-top: 2px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .profileEmail {
+    font-size: 14px;
+    color: $primary-color-lighter;
+    margin: 0;
+    padding: 0;
+    font-style: italic;
+  }
+
+  .profileRole {
+    font-size: 18px;
+    margin-top: 0;
+  }
+
+  .deleteButton {
+    @extend .mainButton;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 8px 16px 8px 16px;
+  }
+
+  .cancelButton {
+    @extend .deleteButton;
+    color: $third-color;
+    background-color: darken($light-font, 5%);
+
+    &:hover {
+      background-color: darken($light-font, 10%);
+    }
+  }
+}
+
+// ==================================================== ADMIN - BLOG ====================================================
+.blogsAdmin {
+  @extend .usersAdmin;
+}
+
+// ==================================================== ADMIN - TAGS ====================================================
+.tagsAdmin {
+  @extend .usersAdmin;
+
+  .tagHeadingAndAddButton {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+    padding-bottom: 40px;
+
+    .tagHeading {
+      @extend .usersAdminHeading;
+      margin: 0;
+    }
+
+    .addTag {
+      @extend .createButton;
+      height: fit-content;
+    }
+  }
+
+  .main {
+    margin: 0 auto;
+
+    .tagDisplay {
+      background-color: lighten($primary-color-light, 99%);
+      border-radius: 6px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 5px 10px 5px 10px;
+      margin: 8px;
+      font-size: 18px;
+      height: auto;
+
+      .tagName {
+        align-items: center;
+        margin-right: 10px;
+
+        .text {
+          //@extend .tagDisplayChip;
+          color: $primary-color-light;
+          font-weight: 500;
+
+          margin-top: 0;
+          //width: fit-content;
+          padding: 10px 18px 10px 18px;
+        }
+      }
+
+      .buttons {
+        margin-left: auto;
+        flex-basis: fit-content;
+
+        .editButton {
+          @extend .font;
+          @extend .readMoreButton;
+          font-size: 14px;
+          height: 40px;
+          padding: 0 10px 0 10px;
+
+          margin-left: 12px;
+          border: 3px solid $secondary-color;
+          color: $secondary-color;
+        }
+
+        .deleteButton {
+          @extend .editButton;
+          border: 3px solid $third-color;
+          color: $third-color;
+        }
+      }
+    }
+  }
+}
+
+.dialogContent {
+  padding: 60px 100px;
+
+  .buttonRow {
+    display: flex;
+    justify-content: space-between;
+
+    .saveButton {
+      @extend .mainButton;
+      background-color: $secondary-color;
+
+      min-width: 105px;
+      padding: 8px 16px 8px 16px;
+
+      &:hover {
+        background-color: darken($secondary-color, 10%);
+      }
+    }
+
+    .cancelButtonEdit {
+      @extend .saveButton;
+      color: $secondary-color;
+      background-color: darken($light-font, 5%);
+
+      &:hover {
+        background-color: darken($light-font, 10%);
+      }
+    }
+  }
+}
+
+.editTagDialog {
+  padding: 100px;
+}
+
+.editTagPage {
+  @extend .adminDashboard;
+
+  h3 {
+    font-size: 30px;
+  }
+}

@@ -1,0 +1,24 @@
+$primary-color: #1b2023;
+$primary-color-light: #37505d;
+$primary-color-lighter: #60727c;
+
+$secondary-color: #52528c;
+
+$third-color: #c33149;
+
+$light-font: #eaeaea;
+$lighter-font: #fefefe;
+$dark-font: $primary-color;
+
+$featured-post-margin: 90px;
+
+$add-post-upload-image-min-width: 10%;
+$add-post-upload-image-max-width: 90%;
+
+$add-post-upload-image-min-height: 90%;
+$add-post-upload-image-max-height: 100%;
+$add-post-form-margin: 30px;
+
+@mixin flexGrow() {
+  flex-grow: 1;
+}
