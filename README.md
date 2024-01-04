@@ -1,3 +1,23 @@
+## Blog Frontend
+A website for users to create and manage blog posts.
+
+# Screencaps
+Home page:
+![blog-post-2](https://github.com/sarahejaz/blog-frontend/assets/58132791/1f0f50c0-f4cb-4a06-8172-b61d27be01ae)
+
+Page of a blog post:
+![blog-post-3](https://github.com/sarahejaz/blog-frontend/assets/58132791/c268321a-abd1-472d-8c9b-9b604f740c0d)
+
+Explore blog posts:
+![blog-post-4](https://github.com/sarahejaz/blog-frontend/assets/58132791/cfe75f0a-33d0-4e76-8226-313c0062143c)
+
+My profile:
+![blog-post-5](https://github.com/sarahejaz/blog-frontend/assets/58132791/ab9dccca-8039-4f14-b4a7-38e5aaa6d019)
+
+Create blog post:
+![blog-post-6](https://github.com/sarahejaz/blog-frontend/assets/58132791/3a908878-5e4c-4b70-a40a-c932dc11295b)
+
+***
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
