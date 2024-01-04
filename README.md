@@ -1,7 +1,7 @@
 ## Blog Frontend
 A website for users to create and manage blog posts. Backend developed using Nest.js can be found here: https://github.com/sarahejaz/blog-backend.
 
-# Screencaps
+## Screencaps
 Home page:
 
 ![blog-post-2](https://github.com/sarahejaz/blog-frontend/assets/58132791/1f0f50c0-f4cb-4a06-8172-b61d27be01ae)
